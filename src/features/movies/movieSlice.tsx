@@ -46,18 +46,5 @@ const movieSlice = createSlice({
     },
 });
 
-// get move details
-
-export const getMovieDetails = createAsyncThunk("movies/getMovieDetails", async (movieId, thunkApi) => {
-    try {
-        const response = await fetch(
-            `https://api.themoviedb.org/3/movie/${movieId}?api_key=a8a6fa2f944128
-            e9712135bc3ca000b1`
-        )
-        return await response.json();
-    } catch (error: any) {
-        return thunkApi.rejectWithValue(error.message)
-    }
-})
 
 export default movieSlice.reducer;
