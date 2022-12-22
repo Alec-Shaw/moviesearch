@@ -18,6 +18,8 @@ function App() {
 
   }, [dispatch])
 
+  console.log(movies.data?.results)
+
   const searchMovies = movies.data?.results.filter((movie) => {
     if (!searchTerm.length) return movie;
     if (!movie.title) return;
