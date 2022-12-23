@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, FC } from "react";
+import { Dispatch, FC } from "react";
 
 interface SearchBoxProps {
     setSearchTerm: Dispatch<React.SetStateAction<string>>
@@ -6,6 +6,7 @@ interface SearchBoxProps {
 
 export const SearchBox: FC<SearchBoxProps> = (props) => {
     const { setSearchTerm } = props
+
     return (
         <input
             onChange={(e) => setSearchTerm(e.target.value.trim().toLowerCase())}
